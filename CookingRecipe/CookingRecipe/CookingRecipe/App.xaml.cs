@@ -1,4 +1,8 @@
-﻿using System;
+﻿using CookingRecipe.Pages;
+using CookingRecipe.Services;
+using CookingRecipe.ViewModels;
+using FreshMvvm;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +15,12 @@ namespace CookingRecipe
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            FreshIOC.Container.Register<IRecipeService, RecipeService>();
+
+            var page = FreshPageModelResolver.ResolvePageModel<SearchRecipePageModel>();
+            var basicNavContainer = new FreshNavigationContainer(page);
+
+            MainPage = basicNavContainer;
         }
 
         protected override void OnStart()
