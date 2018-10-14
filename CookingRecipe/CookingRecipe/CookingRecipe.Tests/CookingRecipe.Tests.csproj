@@ -47,7 +47,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CookingRecipe\CookingRecipe\CookingRecipe.csproj">
+    <ProjectReference Include="..\CookingRecipe\CookingRecipe.csproj">
       <Project>{4d4d8be8-ed0c-4ae5-8ca3-7f22b8752666}</Project>
       <Name>CookingRecipe</Name>
     </ProjectReference>
